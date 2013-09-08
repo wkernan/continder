@@ -1,0 +1,23 @@
+@import 'bootstrap';
+@import 'bootstrap-responsive';
+
+body {
+	padding-top: 60px;
+}
+
+.navbar-inner {
+    @include box-shadow(none !important);
+    border: 1px solid grayLight;
+}
+
+.footer {
+    margin-top: 50px;
+    color: $grayLight;
+    a{
+        color: $gray;
+    }
+}
+
+.center {
+	padding: 10px 15px 10px;
+}
