@@ -19,7 +19,7 @@
                     </ul>
                     <ul class="nav pull-right">
                         <% if current_user %>
-                            <li class="center">Signed in as <strong><%= current_user.name %></strong>!</li>
+                            <li>Signed in as <strong><%= current_user.name %></strong>!    <img src="http://graph.facebook.com/<%= current_user.uid %>/picture?width=40&height=40"></li>
                             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
                         <% else %>
                             <li><%= link_to "Login with Facebook", "/auth/facebook", id: "sign_in" %></li>
