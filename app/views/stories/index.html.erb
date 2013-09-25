@@ -1,0 +1,19 @@
+<div class="center container-narrow">
+  <img src="/assets/tinder-logo.png">
+  <h1>Meet the Continders</h1>
+  <br />
+  <div>
+    <%= link_to '<button class="btn"> New Continder</button>'.html_safe, new_story_path %>
+  </div>
+    <% @stories.each do |story| %>
+      <div class="box">
+        <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=40&height=40"> <%= story.user.name %></p>
+        <p><%= story.content %></p>
+        <%= link_to 'Show', story %> |
+        <% if current_user == story.user %>
+          <%= link_to 'Edit', edit_story_path(story) %> |
+          <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+</div>

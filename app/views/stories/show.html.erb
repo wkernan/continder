@@ -1,0 +1,14 @@
+<div class="box">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <%= @story.content %>
+  </p>
+  <p>
+    by <strong><%= @story.user.name %></strong>   <img src="http://graph.facebook.com/<%= @story.user.uid %>/picture?width=40&height=40">
+  </p>
+
+  <% if current_user == @story.user %>
+    <%= link_to 'Edit', edit_story_path(@story) %> |
+  <% end %>
+  <%= link_to 'Back', stories_path %>
+</div>

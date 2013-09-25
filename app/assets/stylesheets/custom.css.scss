@@ -1,23 +1,132 @@
 @import 'bootstrap';
 @import 'bootstrap-responsive';
 
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+
 body {
-	padding-top: 60px;
+	height: 100%;
+	font-size: 16px;
+}
+
+#wrap > .container {
+	padding-top: 84px;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -91px;
+}
+
+#push {
+	height: 90px;
+}
+
+.container-narrow {
+	margin: 0 auto;
+	max-width: 926px;
 }
 
 .navbar-inner {
     @include box-shadow(none !important);
     border: 1px solid grayLight;
+    background-color: #E0674B;
+    background-image: none;
+    font-family: 'Adamina', sans-serif;
+    min-height: 64px;
+}
+
+.navbar .brand {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
+	font-size: 35px;
+	padding: 18px 20px 10px;
+}
+
+.navbar .nav {
+	li {
+		a {
+			color: #fff;
+			text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
+			padding: 22px 15px 10px;
+		}
+	}
 }
 
 .footer {
-    margin-top: 50px;
-    color: $grayLight;
-    a{
-        color: $gray;
+	height: 90px;
+	text-align: center;
+	border-top: 1px solid #333333;
+	background-color: #E0674B;
+    color: #333333;
+    p {
+    	margin: 5px;
     }
 }
 
 .center {
-	padding: 10px 15px 10px;
+	text-align: center;
+}
+
+/** typography **/
+
+h1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 64px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+p, textarea {
+	font-family: 'Adamina', sans-serif;
+	font-size: 18px;
+}
+
+.box {
+	font-family: 'Adamina', sans-serif;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 5px;
+	font-size: 18px;
+	line-height: 1.4em;
+	border: 1px solid #D7D6D0;
+	box-shadow: 1px 2px 3px #979793;
+	a {
+		font-size: 14px;
+		margin: 10px 10px;
+	}
+	p {
+		margin: 10px 0 10px;
+	}
+}
+
+.right-end {
+	padding-right: 0px;
+}
+
+.btn {
+	color: #fff;
+	background-color: #E0674B;
+	background-image: none;
+	border-radius: 0;
+	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px;
+	font-family: 'Adamina', sans-serif;
+	padding: 10px 12px;
+	font-size: 20px;
+}
+
+.btn:hover {
+	color: #333333;
+	background-color: #E0674B;
+}
+
+@media (min-width: 1200px) {
+	textarea {
+		min-width: 1080px;
+	}
+
 }

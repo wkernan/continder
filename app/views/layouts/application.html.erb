@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Continder</title>
-      <%= stylesheet_link_tag    "application", :media => "all" %>
-      <%= javascript_include_tag "application" %>
-      <%= csrf_meta_tags %>
-      <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
-    </head>
-    <body>
-    <%= render 'layouts/header' %>
-
-    <div class="container">
+  <head>
+    <title>Continder</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu|Adamina' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
+  </head>
+  <body>
+    <div id="wrap">
+      <%= render 'layouts/header' %>
+      <div class="container">
+        <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% end %>
         <%= yield %>
-        <%= render 'layouts/footer' %>
+      </div>
+      <div id="push"></div>
     </div>
-    </body>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
