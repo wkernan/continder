@@ -5,12 +5,12 @@ gem 'rails', '3.2.14'
 gem 'jquery-rails'
 gem 'omniauth-facebook', '1.4.0'
 gem 'thumbs_up'
-
+gem 'bootstrap-sass'
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor', '0.0.2'
-end
+end 
 
 group :development, :test do
 	gem 'sqlite3'
@@ -20,6 +20,5 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass'
 end
 
