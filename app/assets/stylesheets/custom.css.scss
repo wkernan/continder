@@ -58,14 +58,11 @@ body {
 }
 
 .footer {
-	height: 90px;
+	height: 110px;
 	text-align: center;
 	border-top: 1px solid #333333;
 	background-color: #E0674B;
     color: #333333;
-    p {
-    	margin: 5px;
-    }
 }
 
 .center {
@@ -117,6 +114,14 @@ p, textarea {
 	font-family: 'Adamina', sans-serif;
 	padding: 10px 12px;
 	font-size: 20px;
+}
+
+.small {
+	margin-top: 10px;
+	p {
+		font-size: 12px;
+		margin: 0;
+	}
 }
 
 .btn:hover {
