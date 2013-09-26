@@ -10,9 +10,9 @@
         <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=40&height=40"> <%= story.user.name %></p>
         <p><%= story.content %></p>
         <%= link_to '<img src="/assets/hearts-48.png">'.html_safe %>
-        <%= link_to 'Show', story %> |
+        <%= link_to 'Show', story %>
         <% if current_user == story.user %>
-          <%= link_to 'Edit', edit_story_path(story) %> |
+          | <%= link_to 'Edit', edit_story_path(story) %> |
           <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
         <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe %>

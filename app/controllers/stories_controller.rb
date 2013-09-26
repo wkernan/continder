@@ -44,7 +44,7 @@ class StoriesController < ApplicationController
     @story = current_user.stories.new(params[:story])
     if @story.save
       flash[:success] = "Continder was successfully created."
-      redirect_to stories_path
+      redirect_to root_path
     else
       render 'pages/home'
     end
@@ -56,7 +56,7 @@ class StoriesController < ApplicationController
     @story = current_user.stories.find(params[:id])
     if @story.update_attributes(params[:story])
       flash[:success] = "Continder was successfully updated."
-      redirect_to stories_path
+      redirect_to root_path
     else
       render 'pages/home'
     end
