@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.14'
 gem 'jquery-rails'
@@ -8,6 +9,7 @@ gem 'thumbs_up'
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor', '0.0.2'
 end
 
 group :development, :test do
