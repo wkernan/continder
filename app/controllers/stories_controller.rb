@@ -3,7 +3,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.order("created_at desc")
+    @stories = Story.find_with_reputation(:votes, :all, order: "votes desc")
 
     respond_to do |format|
       format.html # index.html.erb
