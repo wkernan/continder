@@ -28,7 +28,7 @@ body {
 
 .container-narrow {
 	margin: 0 auto;
-	max-width: 926px;
+	max-width: 825px;
 }
 
 .navbar-inner {
@@ -76,6 +76,20 @@ h1 {
 	font-size: 64px;
 	font-weight: bold;
 	letter-spacing: -1px;
+	line-height: 50px;
+}
+
+h2 {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 40px;
+	font-weight: normal;
+	a {
+		color: #E0674B;
+	}
+	a:hover {
+		color: #333333;
+		text-decoration: none;
+	}
 }
 
 p, textarea {
@@ -90,7 +104,7 @@ p, textarea {
 	padding: 5px;
 	font-size: 18px;
 	line-height: 1.4em;
-	border: 1px solid #D7D6D0;
+	border: 2px solid #E0674B;
 	box-shadow: 1px 2px 3px #979793;
 	a {
 		font-size: 14px;
@@ -135,3 +149,27 @@ p, textarea {
 	}
 
 }
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 50px;
+	}
+	.box a {
+		font-size: 12px;
+		margin: 0;
+	}
+	#wrap > .container {
+		padding-top: 0;
+	}
+	p {
+		font-size: 12px;
+	}
+	h2 {
+		font-size: 14px;
+	}
+}
+
+.navbar .btn {
+	margin-top: 15px;
+}
+

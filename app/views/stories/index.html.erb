@@ -1,21 +1,27 @@
 <div class="center container-narrow">
   <img src="/assets/tinder-logo.png">
-  <h1>Meet the Continders</h1>
-  <br />
+  <h1>The Continders</h1>
   <div>
+    <h2>Tell us your best Tinder date story and <strong>contend</strong> for the top spot.</h2>
+    <% if signed_in? %>
+    <div style="margin: 20px 0 27px;">
     <%= link_to '<button class="btn"> New Continder</button>'.html_safe, new_story_path %>
+    </div>
+    <% else %>
+    <h2><%= link_to "Login to create your continder!", "/auth/facebook", id: "sign_in" %></h2>
+    <% end %> 
   </div>
     <% @stories.each do |story| %>
       <div class="box">
         <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=40&height=40"> <%= story.user.name %></p>
         <p><%= story.content %></p>
-        <%= link_to '<img src="/assets/hearts-48.png">'.html_safe %>
+        <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>
         <%= link_to 'Show', story %>
         <% if current_user == story.user %>
           | <%= link_to 'Edit', edit_story_path(story) %> |
           <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-        <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe %>
+        <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe, root_path %>
       </div>
     <% end %>
 </div>
