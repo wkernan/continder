@@ -12,7 +12,6 @@ include SessionsHelper
   		end
 	end
 
-	acts_as_voter
 	has_many :stories
 end
 

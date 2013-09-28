@@ -1,5 +1,7 @@
 Continder::Application.routes.draw do
-  resources :stories 
+  resources :stories do
+    member { post :vote } 
+  end
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')

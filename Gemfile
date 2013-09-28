@@ -4,7 +4,6 @@ ruby '1.9.3'
 gem 'rails', '3.2.14'
 gem 'jquery-rails'
 gem 'omniauth-facebook', '1.4.0'
-gem 'thumbs_up'
 gem 'bootstrap-sass'
 
 group :production do
@@ -22,3 +21,4 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'activerecord-reputation-system', require: 'reputation_system'

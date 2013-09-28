@@ -1,5 +1,5 @@
 <div class="center container-narrow">
-  <img src="/assets/tinder-logo.png">
+  <img style="height: 107px; width: 107px;" src="/assets/tinder-logo.png">
   <h1>The Continders</h1>
   <div>
     <h2>Tell us your best Tinder date story and <strong>contend</strong> for the top spot.</h2>
@@ -15,13 +15,14 @@
       <div class="box">
         <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64"> <%= story.user.name %></p>
         <p><%= story.content %></p>
-        <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>
+        <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, vote_story_path(story, type: "up"), :method => :post %>
         <%= link_to 'Show', story %>
         <% if current_user == story.user %>
           | <%= link_to 'Edit', edit_story_path(story) %> |
           <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-        <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe, root_path %>
+        <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe, vote_story_path(story, type: "down"), :method => :post %>
+        <p><%= pluralize story.reputation_for(:votes).to_i, "point" %></p>
       </div>
     <% end %>
 </div>

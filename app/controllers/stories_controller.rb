@@ -74,4 +74,17 @@ class StoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def vote
+    begin
+      value = params[:type] == "up" ? 1 : -1
+      @story = Story.find(params[:id])
+      @story.add_evaluation(:votes, value, current_user)
+      flash[:success] = "Thank you for voting!"
+      redirect_to :back
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :back
+      flash[:error] = "You have already voted for this continder"
+    end
+  end
 end
