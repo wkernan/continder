@@ -4,11 +4,13 @@
     <%= @story.content %>
   </p>
   <p>
-    by <strong><%= @story.user.name %></strong>   <img src="http://graph.facebook.com/<%= @story.user.uid %>/picture?width=40&height=40">
+    by <strong><%= @story.user.name %></strong>   <img src="http://graph.facebook.com/<%= @story.user.uid %>/picture?width=64&height=64">
   </p>
-
+  <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>
+  <%= link_to 'Back', root_path %> 
   <% if current_user == @story.user %>
-    <%= link_to 'Edit', edit_story_path(@story) %> |
+    | <%= link_to 'Edit', edit_story_path(@story) %> |
+    <%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-  <%= link_to 'Back', root_path %>
+  <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe, root_path %>
 </div>

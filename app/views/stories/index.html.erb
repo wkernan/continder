@@ -13,7 +13,7 @@
   </div>
     <% @stories.each do |story| %>
       <div class="box">
-        <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=40&height=40"> <%= story.user.name %></p>
+        <p>Posted By <img src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64"> <%= story.user.name %></p>
         <p><%= story.content %></p>
         <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>
         <%= link_to 'Show', story %>
