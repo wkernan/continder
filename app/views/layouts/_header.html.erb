@@ -16,6 +16,17 @@
                             <%= link_to 'Contact',  '#' %>
                         </li>
                     </ul>
+                    <ul style="margin-left: 35px;" class="nav">
+                        <li>
+                            <div style="height: 57px; padding-top: 3px;" class="fb-like" data-href="http://continder.com" data-width="225" data-show-faces="true" data-send="false">
+                            </div>
+                        </li>
+                        <li style="padding-top: 20px;">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com" data-text="Check this site out!">Tweet</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                            </script>
+                        </li>
+                    </ul>
                     <ul class="nav pull-right">
                         <% if current_user %>
                             <li>Signed in as <strong style="margin-right: 15px;"><%= current_user.name %>!</strong><img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= current_user.uid %>/picture?width=64&height=64"></li>
