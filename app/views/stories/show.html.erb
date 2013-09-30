@@ -7,7 +7,7 @@
   <p>
     by <strong><%= @story.user.name %></strong>   <img src="http://graph.facebook.com/<%= @story.user.uid %>/picture?width=64&height=64">
   </p>
-  <div style="margin-right: 20px;" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
+  <div id="fb-mobile-show" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
   </div>
   <% if signed_in? %>
   <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>

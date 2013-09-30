@@ -156,7 +156,7 @@ p, textarea {
 		font-size: 50px;
 	}
 	.box a {
-		font-size: 12px;
+		font-size: 10px;
 		margin: 0;
 	}
 	#wrap > .container {
@@ -167,20 +167,26 @@ p, textarea {
 	}
 	h2 {
 		font-size: 14px;
+		line-height: 20px;
+	}
+	#fb-mobile {
+		display: block;
+	}
+	#fb-mobile-show {
+		display: block;
+		margin-right: -12px;
+	}
+	.twitter-share-button {
+		padding-left: 35px;
+	}
+}
+
+@media (min-width: 481px) {
+	#fb-mobile-show {
+		margin-right: 20px;
 	}
 }
 
 .navbar .btn {
 	margin-top: 15px;
-}
-
-.heading {
-	margin: 0;
-	list-style: none;
-	ul {
-		margin: 0 0 10px 0;
-	}
-	li {
-		display: inline;
-	}
 }
