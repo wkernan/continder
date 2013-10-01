@@ -214,4 +214,13 @@ p, textarea {
 		margin-left: 5px;
 	}
 }
+
+@media (max-width: 979px) {
+	body {
+		font-size: 16px;
+	}
+	#wrap > .container {
+		padding-top: 0;
+	}
+}
 	
