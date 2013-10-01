@@ -48,6 +48,7 @@ body {
 }
 
 .navbar .nav {
+	margin: 0;
 	li {
 		a {
 			color: #fff;
@@ -55,6 +56,10 @@ body {
 			padding: 22px 15px 10px;
 		}
 	}
+}
+
+#m-left {
+	margin-left: 65px;
 }
 
 .footer {
@@ -190,3 +195,23 @@ p, textarea {
 .navbar .btn {
 	margin-top: 15px;
 }
+
+.navbar .nav > li {
+	text-align: center;
+}
+
+@media (max-width: 1199px) {
+	body {
+		font-size: 12px;
+	}
+	.navbar .brand {
+		padding: 18px 0px 10px 10px;
+	}
+	.navbar .nav {
+		margin: 0;
+	}
+	#m-left {
+		margin-left: 5px;
+	}
+}
+	
