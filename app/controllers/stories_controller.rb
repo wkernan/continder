@@ -46,7 +46,8 @@ class StoriesController < ApplicationController
       flash[:success] = "Continder was successfully created."
       redirect_to root_path
     else
-      render 'pages/home'
+      flash[:error] = "Something went wrong."
+      redirect_to root_path
     end
   end
 
@@ -58,7 +59,8 @@ class StoriesController < ApplicationController
       flash[:success] = "Continder was successfully updated."
       redirect_to root_path
     else
-      render 'pages/home'
+      flash[:error] = "Something went wrong."
+      redirect_to root_path
     end
   end
 
