@@ -6,7 +6,8 @@ Continder::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-  
+  match 'recent', to: 'pages#recent'
+
   root :to => 'stories#index'
 
   # The priority is based upon order of creation:
