@@ -2,6 +2,15 @@ class StoriesController < ApplicationController
 
   # GET /stories
   # GET /stories.json
+  def recent
+    @stories = Story.order('created_at DESC')
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @stories }
+    end
+  end
+
   def index
     @stories = Story.find_with_reputation(:votes, :all, order: "votes desc")
 

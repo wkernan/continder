@@ -1,0 +1,21 @@
+<% provide(:descr, 'Contend for the top spot!') %>
+<div class="center container-narrow">
+  <h1>The Continders</h1>
+  <div>
+    <h2>Tell us your best Tinder date story and <strong>contend</strong> for the top spot.</h2>
+    <% if signed_in? %>
+    <div style="margin: 20px 0 27px;">
+    <%= link_to '<button class="btn"> Become a Continder!</button>'.html_safe, new_story_path %>
+    </div>
+    <% else %>
+    <h2><%= link_to "Login to create your continder and start voting!", "/auth/facebook", id: "sign_in" %></h2>
+    <% end %> 
+  </div>
+  <div class="boxy">
+    <ul>
+      <li style="margin-right: 438px;"><%= link_to '<button class="btn left">Top Continders</button>'.html_safe, root_path %></li>
+      <li style="margin-left: 10px;"><%= link_to '<button class="btn right">Most Recent</button>'.html_safe, recent_path %></li>
+    </ul>
+  </div>
+  <%= render 'shared/stories' %>
+</div>
