@@ -11,6 +11,12 @@
     <h2><%= link_to "Login to create your continder and start voting!", "/auth/facebook", id: "sign_in" %></h2>
     <% end %> 
   </div>
+  <div class="boxy">
+    <ul>
+      <li style="margin-right: 438px;"><%= link_to '<button class="btn left">Top Continders</button>'.html_safe, root_path %></li>
+      <li style="margin-left: 10px;"><%= link_to '<button class="btn right">Most Recent</button>'.html_safe, recent_path %></li>
+    </ul>
+  </div>
   <% @stories.each do |story| %>
     <div class="box">
       <p>Posted By <img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64" class="img-circle"> <%= story.user.name %></p>

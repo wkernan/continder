@@ -223,4 +223,22 @@ p, textarea {
 		padding-top: 0;
 	}
 }
+
+.boxy {
+	font-family: 'Adamina', sans-serif;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	padding: 5px;
+	font-size: 18px;
+	line-height: 1.4em;
+	border: 2px solid #E0674B;
+	text-align: center;
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		display: inline;
+	}
+}
 	
