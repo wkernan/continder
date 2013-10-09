@@ -17,27 +17,5 @@
     </ul>
     </div> 
   </div>
-  <% @stories.each do |story| %>
-    <div class="box">
-      <p>Posted By <img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64" class="img-circle"> <%= story.user.name %></p>
-      <p><%= story.content %></p>
-      <div id="fb-mobile" class="fb-like" data-href="http://continder.com/stories/<%= story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
-      </div>
-      <% if signed_in? %>
-      <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, vote_story_path(story, type: "up"), :method => :post %>
-      <% end %>
-      <%= link_to 'Show', story %>
-      <% if current_user == story.user %>
-        | <%= link_to 'Edit', edit_story_path(story) %> |
-        <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <% if signed_in? %>
-      <%= link_to '<img src="/assets/x-mark-48.png">'.html_safe, vote_story_path(story, type: "down"), :method => :post %>
-      <% end %>
-      <a id="tw-mobile" href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= story.id %>" data-text="<%= story.content %>">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-      </script>
-      <p><%= pluralize story.reputation_for(:votes).to_i, "point" %></p>
-    </div>
-  <% end %>
+  <%= render 'shared/stories' %>
 </div>
