@@ -32,7 +32,8 @@
                             <li><strong style="margin-right: 15px;"><%= current_user.name %></strong><img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= current_user.uid %>/picture?width=64&height=64" class="img-circle"></li>
                             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
                         <% else %>
-                            <li><%= link_to "Login with Facebook", "/auth/facebook", id: "sign_in" %></li>
+                            <li><%= link_to "Login with Facebook", "/auth/facebook", style: "padding: 22px 12px 10px", id: "sign_in" %></li>
+                            <li><%= link_to "Remain Anonymous", "#" %></li>
                         <% end %>
                     </ul>
                 </div>
