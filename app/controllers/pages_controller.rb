@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
   end
+
   def recent
     @stories = Story.order("created_at desc")
 
@@ -8,5 +9,11 @@ class PagesController < ApplicationController
       format.html
       format.json { render json: @stories }
     end
+  end
+
+  def about
+  end
+
+  def contact
   end
 end
