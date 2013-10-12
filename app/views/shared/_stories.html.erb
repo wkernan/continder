@@ -1,6 +1,6 @@
 <% @stories.each do |story| %>
   <div class="box">
-    <p>Posted By <img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64" class="img-circle"> <%= story.user.name %> <%= time_ago_in_words(story.created_at) %> ago.</p>
+    <p>Posted By <img style="height: 64px; width: 64px;" src="http://graph.facebook.com/<%= story.user.uid %>/picture?width=64&height=64" class="img-circle"> <strong><%= story.user.name %></strong> <%= time_ago_in_words(story.created_at) %> ago.</p>
     <p><%= story.content %></p>
     <div id="fb-mobile" class="fb-like" data-href="http://continder.com/stories/<%= story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
     </div>
