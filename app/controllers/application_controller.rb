@@ -7,7 +7,7 @@ private
 	end
 
 	def admin?
-		request.remote_ip == "127.0.0.1"
+		request.remote_ip == "99.89.189.74"
 	end
 	helper_method :admin?
 	helper_method :current_user
