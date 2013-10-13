@@ -8,7 +8,7 @@
     <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, vote_story_path(story, type: "up"), :method => :post %>
     <% end %>
     <%= link_to 'Show', story %>
-    <% if current_user == story.user %>
+    <% if admin? || current_user == story.user %>
       | <%= link_to 'Edit', edit_story_path(story) %> |
       <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
