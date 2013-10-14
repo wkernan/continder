@@ -1,11 +1,11 @@
 Continder::Application.routes.draw do
+  devise_for :users
+
   resources :stories do
     member { post :vote } 
   end
 
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'about', to: 'pages#about'
   match 'recent', to: 'pages#recent'
 
   root :to => 'stories#index'

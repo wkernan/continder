@@ -2,11 +2,11 @@
 <div class="box">
   <p id="notice"><%= notice %></p>
   <p>
-    <%= @story.content %>
+    <%= simple_format h @story.content %>
   </p>
   <br />
   <p>
-    by <strong><%= @story.user.name %></strong>   <img src="http://graph.facebook.com/<%= @story.user.uid %>/picture?width=64&height=64" class="img-circle">
+    by <strong><%= @story.user.name %></strong>
   </p>
   <div id="fb-mobile-show" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
   </div>

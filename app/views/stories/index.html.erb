@@ -8,7 +8,8 @@
     <%= link_to '<button class="btn">Become a Continder!</button>'.html_safe, new_story_path %>
     </div>
     <% else %>
-    <h2><%= link_to "Login to create your continder and start voting!", "/auth/facebook", id: "sign_in" %></h2>
+    <%= link_to '<button class="btn">Sign up!</button>'.html_safe, new_user_registration_path %>
+    <h2>to create your continder and start voting!</h2>
     <% end %>
     <div class="boxy">
     <ul>
