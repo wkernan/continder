@@ -42,8 +42,8 @@ Continder::Application.configure do
     port: 587,
     authentication: 'plain', 
     enable_starttls_auto: true,
-    user_name: APP_CONFIG['username'],
-    password: APP_CONFIG['password']
+    user_name: 'USERNAME',
+    password: 'PASSWORD'
   }
 
 end
