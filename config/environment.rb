@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Continder::Application.initialize!
 
 #needed to get mailer to work
-#APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")
+APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")
