@@ -51,6 +51,7 @@ Continder::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
    config.action_mailer.raise_delivery_errors = true
    config.action_mailer.perform_deliveries = true
+   config.action_mailer.default :charset => "utf-8"
 
   # Enable threaded mode
   # config.threadsafe!
@@ -73,7 +74,7 @@ Continder::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: 'gmail.com',
+    domain: 'continder@gmail.com',
     authentication: "plain", 
     user_name: 'USERNAME',
     password: 'PASSWORD',
