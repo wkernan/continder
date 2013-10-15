@@ -50,6 +50,7 @@ Continder::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
    config.action_mailer.raise_delivery_errors = true
+   config.action_mailer.perform_deliveries = true
 
   # Enable threaded mode
   # config.threadsafe!
@@ -74,9 +75,9 @@ Continder::Application.configure do
     port: 587,
     domain: 'gmail.com',
     authentication: "plain", 
-    enable_starttls_auto: true,
-    user_name: 'USERNAME',
-    password: 'PASSWORD'
+    :username   => ENV['USERNAME'],
+    :password   => ENV['PASSWORD'],
+    enable_starttls_auto: true
   }
 
 end
