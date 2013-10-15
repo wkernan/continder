@@ -1,4 +1,6 @@
 Continder::Application.configure do
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -74,8 +76,8 @@ Continder::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: 'continder@gmail.com',
-    authentication: "plain", 
+    domain: 'gmail.com',
+    :authentication => :plain, 
     user_name: 'USERNAME',
     password: 'PASSWORD',
     enable_starttls_auto: true
