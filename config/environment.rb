@@ -13,5 +13,4 @@ Continder::Application.initialize!
 	    user_name: 'USERNAME',
 	    password: 'PASSWORD',
 	    enable_starttls_auto: true
-  }
-end
+ 	}
