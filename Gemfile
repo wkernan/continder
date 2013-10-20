@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
+gem 'newrelic_rpm'
 
 group :production do
 	gem 'pg'
