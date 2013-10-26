@@ -1,3 +1,7 @@
+$(document).ajaxSend(function(event, request, settings) {
+    $('#loading-indicator').show();
+});
+
 var currentPage = 1;
 var intervalID = -1000;
  
@@ -35,4 +39,8 @@ $(document).ajaxComplete(function(){
         FB.XFBML.parse();
         twttr.widgets.load(); 
     }catch(ex){}
+});
+
+$(document).ajaxComplete(function(event, request, settings) {
+    $('#loading-indicator').hide();
 });
