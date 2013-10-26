@@ -76,8 +76,7 @@ class StoriesController < ApplicationController
   # DELETE /stories/1
   # DELETE /stories/1.json
   def destroy
-    @story = current_user.stories.find(params[:id])
-    @story.destroy
+    @story = Story.find(params[:id]).destroy
     flash[:error] = "Continder deleted!"
     redirect_to root_path
   end
