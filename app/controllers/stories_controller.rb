@@ -79,11 +79,7 @@ class StoriesController < ApplicationController
     @story = current_user.stories.find(params[:id])
     @story.destroy
     flash[:error] = "Continder deleted!"
-
-    respond_to do |format|
-      format.html { redirect_to stories_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
   end
 
   def vote
