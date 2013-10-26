@@ -44,7 +44,7 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
-    @story = current_user.stories.find(params[:id])
+    @story = Story.find(params[:id])
   end
 
   # POST /stories
@@ -63,7 +63,7 @@ class StoriesController < ApplicationController
   # PUT /stories/1
   # PUT /stories/1.json
   def update
-    @story = current_user.stories.find(params[:id])
+    @story = Story.find(params[:id])
     if @story.update_attributes(params[:story])
       flash[:success] = "Continder was successfully updated."
       redirect_to root_path
