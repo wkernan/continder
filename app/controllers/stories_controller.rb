@@ -13,6 +13,7 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.find_with_reputation(:votes, :all, order: "votes desc")
+    @stories = Story.paginate(page: params[:page], :per_page => 5)
 
     respond_to do |format|
       format.html # index.html.erb

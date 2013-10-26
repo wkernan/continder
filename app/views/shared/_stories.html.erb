@@ -1,3 +1,4 @@
+<div class="stories">
 <% @stories.each do |story| %>
   <div class="box">
     <p>Posted By <strong><%= story.user.name %></strong> <%= time_ago_in_words(story.created_at) %> ago.</p>
@@ -21,3 +22,4 @@
     <p><%= pluralize story.reputation_for(:votes).to_i, "point" %></p>
   </div>
 <% end %>
+</div>
