@@ -29,3 +29,10 @@ function pageHeight() {
 $('document').ready(function(){
 	intervalID = setInterval(checkScroll, 250);
 })
+
+$(document).ajaxComplete(function(){
+    try{
+        FB.XFBML.parse();
+        twttr.widgets.load(); 
+    }catch(ex){}
+});
