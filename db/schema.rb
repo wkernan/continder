@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014003607) do
+ActiveRecord::Schema.define(:version => 20131026172138) do
 
   create_table "rs_evaluations", :force => true do |t|
     t.string   "reputation_name"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(:version => 20131014003607) do
   add_index "rs_reputations", ["target_id", "target_type"], :name => "index_rs_reputations_on_target_id_and_target_type"
 
   create_table "stories", :force => true do |t|
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "content",    :limit => 255, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.integer  "user_id"
   end
 
