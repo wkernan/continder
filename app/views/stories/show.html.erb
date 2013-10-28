@@ -4,25 +4,40 @@
   <p>
     <%= simple_format h @story.content %>
   </p>
-  <br />
   <p>
     by <strong><%= @story.user.name %></strong>
   </p>
-  <div id="fb-mobile-show" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
+  <% if signed_in? %>
+  <div class="container-narrower">
+    <%= link_to '<img style="float: left" src="/assets/x-mark-128.png">'.html_safe, root_path %>
+    <%= link_to '<img style="float: right" src="/assets/hearts-128.png">'.html_safe, root_path %>
   </div>
-  <% if signed_in? %>
-  <%= link_to '<img src="/assets/hearts-48.png">'.html_safe, root_path %>
   <% end %>
-  <%= link_to 'Back', root_path %> 
-  <% if current_user == @story.user %>
-    | <%= link_to 'Edit', edit_story_path(@story) %> |
-    <%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <% if signed_in? %>
-  <%= link_to '<img style="margin-right: 20px" src="/assets/x-mark-48.png">'.html_safe, root_path %>
-  <% end %>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= @story.id %>" data-text="<%= @story.content %>">Tweet</a>
+  <div>
+    <div id="fb-mobile-show" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
+    </div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= @story.id %>" data-text="<%= @story.content %>">Tweet</a>
+  </div>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
   <p><%= pluralize @story.reputation_for(:votes).to_i, "point" %></p>
+   <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'continder'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
+<%= link_to 'Back', root_path %> 
+<% if current_user == @story.user %>
+  | <%= link_to 'Edit', edit_story_path(@story) %> |
+  <%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

@@ -8,6 +8,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'newrelic_rpm'
 gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 group :production do
 	gem 'pg'

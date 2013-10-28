@@ -31,6 +31,11 @@ body {
 	max-width: 825px;
 }
 
+.container-narrower {
+	margin: 0 auto;
+	max-width: 450px;
+}
+
 .navbar-inner {
     @include box-shadow(none !important);
     border: 1px solid grayLight;

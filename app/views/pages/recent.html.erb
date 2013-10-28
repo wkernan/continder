@@ -17,9 +17,14 @@
       <li style="margin-right: 200px;"><%= link_to '<button class="btn left">Top Continders</button>'.html_safe, root_path %></li>
       <li style="margin-left: 10px;"><%= link_to '<button class="btn right" style="width: 179px">Most Recent</button>'.html_safe, recent_path %></li>
     </ul>
+    <%= will_paginate @stories %>
   </div>
   <%= render 'shared/stories' %>
-  <div id="loading-indicator">
-  <%= image_tag("ajax-loader.gif", :id => "loading-indicator") %>
+  <div class="boxy">
+    <%= will_paginate @stories %>
   </div>
+  <div class="fb-comments"data-href="http://continder.com" data-num-posts="2" mobile="false"></div>
+  <style>.fb-comments, .fb-comments iframe[style], .fb-like-box, .fb-like-box iframe[style] {width: 100% !important;}
+  .fb-comments span, .fb-comments iframe span[style], .fb-like-box span, .fb-like-box iframe span[style] {width: 100% !important;}
+</style>
 </div>
