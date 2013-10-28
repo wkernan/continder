@@ -20,8 +20,13 @@
     <%= will_paginate @stories %>
   </div>
   <%= render 'shared/stories' %>
-  <div class="boxy">
+   <div class="boxy">
+    <ul>
+      <li style="margin-right: 200px;"><%= link_to '<button class="btn left">Top Continders</button>'.html_safe, root_path %></li>
+      <li style="margin-left: 10px;"><%= link_to '<button class="btn right" style="width: 179px">Most Recent</button>'.html_safe, recent_path %></li>
+    </ul>
     <%= will_paginate @stories %>
+    <%= link_to '<button class="btn">Back to top</button>'.html_safe, '#' %>
   </div>
   <div class="fb-comments"data-href="http://continder.com" data-num-posts="2" mobile="false"></div>
   <style>.fb-comments, .fb-comments iframe[style], .fb-like-box, .fb-like-box iframe[style] {width: 100% !important;}
