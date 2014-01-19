@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.2.14'
+gem 'rails'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '~> 3.0.0.rc'
 gem 'simple_form'
 gem 'newrelic_rpm'
 gem 'will_paginate', '~> 3.0'
@@ -20,8 +20,8 @@ group :development, :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 4.0.1'
+  gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier'
 end
 
