@@ -33,6 +33,10 @@ body {
 	max-width: 450px;
 }
 
+.icon-bar {
+	background-color: white;
+}
+
 .navbar {
     @include box-shadow(none !important);
     border: 1px solid grayLight;
