@@ -30,10 +30,7 @@
                     <ul class="nav pull-right">
                         <% if current_user %>
                             <li style="padding: 22px 15px 10px; display: block">Hey <strong><%= current_user.name %></strong>!</li>
-                            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                        <% else %>
-                            <li><%= link_to "Log in", new_user_session_path, style: "padding: 22px 12px 10px", id: "sign_in" %></li>
                         <% end %>
                     </ul>
                 </div>
