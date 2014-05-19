@@ -5,6 +5,16 @@ html {
 	height: 100%;
 }
 
+a {
+	color: #E0674B;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+
+}
+
 body {
 	height: 100%;
 	font-size: 16px;
@@ -318,4 +328,14 @@ p, textarea {
 
 .like:hover {
 	background-image: url('/assets/hearts-hover-128.png');
+}
+
+.pagination > .active > span {
+	background-color: #E0674B;
+	border-color: #E0674B;
+}
+
+.pagination > .active > span:hover {
+	background-color: black;
+	border-color: black;
 }

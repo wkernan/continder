@@ -7,7 +7,7 @@
       <li style="margin-right: 200px;"><%= link_to '<button class="btn left">Top Continders</button>'.html_safe, root_path %></li>
       <li><%= link_to '<button class="btn right" style="width: 179px">Most Recent</button>'.html_safe, recent_path %></li>
     </ul>
-    <%= will_paginate @stories %>
+    <%= will_paginate @stories, renderer: BootstrapPagination::Rails %>
     <%= link_to '<button class="btn">Back to top</button>'.html_safe, '#' %>
   </div>
   <div class="fb-comments"data-href="http://continder.com" data-num-posts="2" mobile="false" data-width="100%"></div>
