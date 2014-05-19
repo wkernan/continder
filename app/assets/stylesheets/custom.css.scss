@@ -175,9 +175,6 @@ p, textarea {
 	h1 {
 		font-size: 50px;
 	}
-	.boxy ul {
-		margin-left: -35px;
-	}
 	.box a {
 		font-size: 10px;
 		margin: 0;
@@ -260,8 +257,11 @@ p, textarea {
 	li {
 		display: inline;
 	}
+	ul {
+		padding-left: 0px;
+	}
 }
-	
+
 #loading-indicator {
 	margin-bottom: 5px;
 	left: 10px;

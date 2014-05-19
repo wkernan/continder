@@ -2,11 +2,10 @@
     <h2>Tell us your best or worst Tinder online dating story and vote for the top spot.</h2>
     <% if signed_in? %>
         <div style="margin: 20px 0 27px;">
-        <%= link_to '<button class="btn">Write your story!</button>'.html_safe, new_story_path %>
+        <%= link_to '<button class="btn">Write a story!</button>'.html_safe, new_story_path %>
         </div>
     <% else %>
-        <%= link_to '<button class="btn">Write your story!</button>'.html_safe, new_user_registration_path %>
-        <h2>to create your continder and start voting!</h2>
+        <%= link_to '<button class="btn">Write a story!</button>'.html_safe, new_user_registration_path %>
     <% end %>
     <div class="boxy">
         <ul>

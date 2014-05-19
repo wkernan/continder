@@ -20,7 +20,7 @@
                 <% if signed_in? %>
                 <%= link_to '', vote_story_path(story, type: "up"), :class => "likes", :method => :post %>
                 <% else %>
-                <%= link_to '', :class => "likes" %>
+                <%= link_to '', new_user_registration_path, :class => "likes" %>
                 <% end %>
                 <a id="tw-mobile" href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= story.id %>" data-text="<%= story.content %>">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
