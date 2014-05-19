@@ -30,7 +30,7 @@ body {
 }
 
 #push {
-	height: 90px;
+	height: 154px;
 }
 
 .container-narrow {
@@ -49,7 +49,7 @@ body {
 
 .navbar {
     @include box-shadow(none !important);
-    border: 1px solid grayLight;
+    border-bottom: 1px solid black;
     background-color: #E0674B;
     background-image: none;
     font-family: 'Adamina', sans-serif;
@@ -87,7 +87,7 @@ body {
 }
 
 .footer {
-	height: 110px;
+	height: 80px;
 	text-align: center;
 	border-top: 1px solid #333333;
 	background-color: #E0674B;
