@@ -95,7 +95,7 @@ GEM
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
-    sass (3.3.7)
+    sass (3.2.13)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -138,6 +138,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.14)
   rails_12factor (= 0.0.2)
+  sass (= 3.2.13)
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

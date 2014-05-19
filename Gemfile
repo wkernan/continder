@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'newrelic_rpm'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+gem 'sass', '3.2.13'
 
 group :production do
 	gem 'pg'
