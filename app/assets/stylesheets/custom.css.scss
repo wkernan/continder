@@ -11,7 +11,7 @@ body {
 }
 
 #wrap > .container {
-	padding-top: 84px;
+	padding-top: 85px;
 }
 
 #wrap {
@@ -175,15 +175,24 @@ p, textarea {
 	h1 {
 		font-size: 50px;
 	}
+	.boxy ul {
+		margin-left: -35px;
+	}
 	.box a {
 		font-size: 10px;
 		margin: 0;
 	}
 	#wrap > .container {
-		padding-top: 0;
+		padding-top: 20px;
+	}
+	.container-narrow {
+		margin-top: 80px;
 	}
 	p {
 		font-size: 12px;
+	}
+	#wrap {
+		margin-bottom: 0px;
 	}
 	h2 {
 		font-size: 14px;
@@ -197,7 +206,7 @@ p, textarea {
 		margin-right: -12px;
 	}
 	.twitter-share-button {
-		padding-left: 35px;
+		padding-left: 16px;
 	}
 }
 
@@ -248,10 +257,6 @@ p, textarea {
 	line-height: 1.4em;
 	border: 2px solid #E0674B;
 	text-align: center;
-	ul {
-		list-style: none;
-		margin: 0;
-	}
 	li {
 		display: inline;
 	}
@@ -261,4 +266,51 @@ p, textarea {
 	margin-bottom: 5px;
 	left: 10px;
 	top: 10px;
- }
+}
+
+.hate {
+	float: left;
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	background-image: url('/assets/x-mark-128.png');
+}
+
+.hate:hover {
+	background-image: url('/assets/x-mark-hover-128.png')
+}
+
+.hates {
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	background-image: url('/assets/x-mark-128.png');
+}
+
+.hates:hover {
+	background-image: url('/assets/x-mark-hover-128.png')
+}
+
+.likes {
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	background-image: url('/assets/hearts-128.png');
+}
+
+.likes:hover {
+	background-image: url('/assets/hearts-hover-128.png');
+}
+
+
+.like {
+	float: right;
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	background-image: url('/assets/hearts-128.png');
+}
+
+.like:hover {
+	background-image: url('/assets/hearts-hover-128.png');
+}
