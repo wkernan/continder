@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
 
   # GET /stories
   # GET /stories.json
@@ -44,7 +45,7 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
-    @story = Story.find(params[:id])
+    @story = current_user.stories.find(params[:id]) rescue redirect_to(root_path)
   end
 
   # POST /stories
@@ -55,7 +56,7 @@ class StoriesController < ApplicationController
       flash[:success] = "Continder was successfully created."
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong."
+      flash[:danger] = "Something went wrong."
       redirect_to root_path
     end
   end
