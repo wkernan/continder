@@ -15,6 +15,14 @@ a:hover {
 
 }
 
+.green {
+	color: green;
+}
+
+.green:hover {
+	color: black;
+}
+
 body {
 	height: 100%;
 	font-size: 16px;
@@ -346,4 +354,12 @@ p, textarea {
 
 .pagination > li > a:hover {
 	color: #E0674B;
+}
+
+.fa-5 {
+	font-size: 10em;
+}
+
+.fa-4 {
+	font-size: 8em;
 }
