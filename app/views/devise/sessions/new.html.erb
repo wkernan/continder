@@ -1,8 +1,9 @@
-<h2 style="margin-bottom: 35px; margin-left: 50px;">Sign in</h2>
+<h3 class="center" style="margin-bottom: 35px; margin-left: 50px;">Sign in</h3>
 <div class="box">
-	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-control") do |f| %>
+</br>
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-	<%= f.input :name, :placeholder => 'Username', :autofocus => true, :input_html => {:style => 'width: 70%'} %></br>
+	<%= f.input :name, :placeholder => 'Username', :autofocus => true, :input_html => {:style => 'width: 70%;'} %></br>
 	<%= f.input :password, :placeholder => 'Password', :input_html => {:style => 'width: 70%'} %></br>
 
 	  <% if devise_mapping.rememberable? -%>
