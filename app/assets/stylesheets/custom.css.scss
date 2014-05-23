@@ -9,11 +9,17 @@ a {
 	color: #E0674B;
 }
 
+ul {
+	list-style-type: none;
+	display: inline;
+}
+
 a:hover {
 	color: black;
 	text-decoration: none;
-
 }
+
+
 
 .green {
 	color: green;
@@ -34,7 +40,7 @@ body {
 
 #wrap {
 	height: auto !important;
-	margin: 0 auto 80px;
+	margin: 0 auto 0px;
 }
 
 #push {
@@ -90,12 +96,19 @@ body {
 	}
 }
 
+.navbar-toggle {
+	margin-top: 12px;
+	padding-top: 10px;
+	background-color: black;
+
+}
+
 #m-left {
 	margin-left: 65px;
 }
 
 .footer {
-	height: 80px;
+	height: 96px;
 	text-align: center;
 	border-top: 1px solid #333333;
 	background-color: #E0674B;
@@ -209,7 +222,7 @@ p, textarea {
 		margin-top: 80px;
 	}
 	p {
-		font-size: 12px;
+		font-size: 15px;
 	}
 	#wrap {
 		margin-bottom: 0px;
@@ -218,16 +231,35 @@ p, textarea {
 		font-size: 14px;
 		line-height: 20px;
 	}
-	#fb-mobile {
-		display: block;
+	.boxy ul{
+		font-size: 15px;
 	}
-	#fb-mobile-show {
-		display: block;
-		margin-right: -12px;
+}
+
+#social {
+	margin-bottom: 15px;
+}
+
+.point {
+	width: 315px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	a {
+		padding-right: 115px;
+		font-size: 15px;
+		margin-right: 0;
+		margin-left: 0;
 	}
-	.twitter-share-button {
-		padding-left: 16px;
+	p {
+		padding-right: 35px
 	}
+}
+
+.social > iframe {
+	position: relative;
+	display: inline-block;
+	top: 5px;
 }
 
 @media (min-width: 481px) {
@@ -265,6 +297,9 @@ p, textarea {
 	}
 	#wrap > .container {
 		padding-top: 0;
+	}
+	#show {
+		margin-top: 85px;
 	}
 }
 

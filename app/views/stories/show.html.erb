@@ -1,38 +1,41 @@
 <% provide(:descr, @story.content) %>
-<div class="box">
+<div class="box" id="show">
   <p id="notice"><%= notice %></p>
-  <p>
-    <%= simple_format h @story.content %>
-  </p>
-  <p>
-    by <strong><%= @story.user.name %></strong>
-  </p>
-  <% if signed_in? %>
-  <div class="container-narrower">
-    <%= link_to '', vote_story_path(@story, type: "down"), :class => "hate", :method => :post %>
-    <%= link_to '', vote_story_path(@story, type: "up"), :class => "like", :method => :post %>
-  </div>
-  <% else %>
-  <div class="container-narrower">
-    <%= link_to '', new_user_registration_path, :class => "hate" %>
-    <%= link_to '', new_user_registration_path, :class => "like" %>
-  </div>
-  <% end %>
-  <div>
-    <div id="fb-mobile-show" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false">
-    </div>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= @story.id %>" data-text="<%= @story.content %>">Tweet</a>
-  </div>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-  </script>
-  <p><%= pluralize @story.reputation_for(:votes).to_i, "point" %></p>
-  <div class="fb-comments"data-href="http://continder.com/stories/<%= @story.id %>" data-num-posts="2" mobile="false" data-width="100%"></div>
-  <style>.fb-comments, .fb-comments iframe[style], .fb-like-box, .fb-like-box iframe[style] {width: 100% !important;}
-  .fb-comments span, .fb-comments iframe span[style], .fb-like-box span, .fb-like-box iframe span[style] {width: 100% !important;}
-</style>
-</div>
-<%= link_to 'Back', root_path %> 
-<% if current_user == @story.user %>
-  | <%= link_to 'Edit', edit_story_path(@story) %> |
-  <%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+          <div>
+            <% if admin? || current_user == @story.user %>
+                <%= link_to 'Edit', edit_story_path(@story) %> |
+                <%= link_to 'Destroy', @story, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </div>
+        <p>Posted By <strong><%= @story.user.name %></strong> <%= time_ago_in_words(@story.created_at) %> ago.</p>
+        <p><%= simple_format h @story.content %></p>
+        <div class="row">
+            <div class="col-xs-6">
+                <% if signed_in? %>
+                <%= link_to content_tag(:i,nil, :class=>"fa fa-times fa-5"), vote_story_path(@story, type: "down"), :method => :post %>
+                <% else %>
+                <%= link_to content_tag(:i,nil, :class=>"fa fa-times fa-5"), new_user_registration_path %>
+                <% end %>
+            </div>
+            <div class="col-xs-6" style="height: 110px; padding-top: 15px">
+                <% if signed_in? %>
+                <%= link_to content_tag(:i,nil, :class=>"fa fa-heart fa-4 green"), vote_story_path(@story, type: "up"), :method => :post %>
+                <% else %>
+                <%= link_to content_tag(:i,nil, :class=>"fa fa-heart fa-4 green"), new_user_registration_path %>
+                <% end %>
+            </div>
+        </div>
+        <div class="row" id="social">
+            <div class="col-xs-6">
+                <div id="fb-mobile" class="fb-like" data-href="http://continder.com/stories/<%= @story.id %>" data-width="225" data-layout="button_count" data-show-faces="false" data-send="false" style="display: inline; padding-left: 50px">
+                </div>
+            </div>
+            <div class="col-xs-6 social">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://continder.com/stories/<%= @story.id %>" data-text="<%= @story.content %>">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+        <div class="point">
+            <%= link_to 'Comments', @story %>
+            <p style="display: inline;"><%= pluralize @story.reputation_for(:votes).to_i, "point" %></p>
+        </div>
