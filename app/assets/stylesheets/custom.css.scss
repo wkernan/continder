@@ -9,6 +9,14 @@ a {
 	color: #E0674B;
 }
 
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+.form-control {
+	width: 60%;
+}
+
 ul {
 	list-style-type: none;
 	display: inline;

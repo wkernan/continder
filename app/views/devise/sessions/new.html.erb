@@ -1,14 +1,17 @@
-<div class="center container-narrow"> 
-  <h3>Sign in</h3><br />
+<h2 style="margin-bottom: 35px; margin-left: 50px;">Sign in</h2>
+<div class="box">
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-control") do |f| %>
+
+	<%= f.input :name, :placeholder => 'Username', :autofocus => true, :input_html => {:style => 'width: 70%'} %></br>
+	<%= f.input :password, :placeholder => 'Password', :input_html => {:style => 'width: 70%'} %></br>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div></br>
+	  <% end -%>
+
+	  <div class="center" style="margin-top: 15px; margin-bottom: 50px;">
+        <%= f.submit "Sign in", class: "btn btn-primary" %>
+      </div>
+	<% end %>
 </div>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
-
-  <%= f.input :name, label: "Username" %>
-  <%= f.input :password, label: "Password" %>
-
-  <div class="form-actions">
-    <%= f.submit "Sign in", class: "btn" %>
-  </div>
-<% end %>
-
-<p><%= render "devise/shared/links" %></p>
+<%= render "devise/shared/links" %>
