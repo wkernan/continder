@@ -54,7 +54,7 @@ class StoriesController < ApplicationController
     @story = current_user.stories.new(params[:story])
     if @story.save
       flash[:success] = "Continder was successfully created."
-      redirect_to root_path
+      redirect_to recent_path
     else
       flash[:danger] = "Something went wrong."
       redirect_to root_path
@@ -69,7 +69,7 @@ class StoriesController < ApplicationController
       flash[:success] = "Continder was successfully updated."
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong."
+      flash[:danger] = "Something went wrong."
       redirect_to root_path
     end
   end
@@ -78,7 +78,7 @@ class StoriesController < ApplicationController
   # DELETE /stories/1.json
   def destroy
     @story = Story.find(params[:id]).destroy
-    flash[:error] = "Continder deleted!"
+    flash[:info] = "Continder deleted!"
     redirect_to root_path
   end
 
@@ -91,7 +91,7 @@ class StoriesController < ApplicationController
       redirect_to :back
     rescue ActiveRecord::RecordInvalid
       redirect_to :back
-      flash[:error] = "You have already voted for this continder"
+      flash[:danger] = "You have already voted for this continder"
     end
   end
 end
